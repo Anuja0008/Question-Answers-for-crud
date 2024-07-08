@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class PizzaParty {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get user input
+        System.out.print("How many people? ");
+        int people = scanner.nextInt();
+        System.out.print("How many pizzas? ");
+        int pizzas = scanner.nextInt();
+        System.out.print("Slices per pizza? ");
+        int slicesPerPizza = scanner.nextInt();
+
+        // Calculate total slices
+        int totalSlices = pizzas * slicesPerPizza;
+
+        // Calculate slices per person (floor division ensures even distribution)
+        int slicesPerPerson = totalSlices / people;
+
+        // Calculate leftover slices
+        int leftoverSlices = totalSlices % people;
+
+        // Display results
+        System.out.println("\nPizza Party!");
+        System.out.println(people + " people with " + pizzas + " pizzas");
+        System.out.println("Each person gets " + slicesPerPerson + " slices.");
+        System.out.println("Leftovers: " + leftoverSlices + " slices");
+    }
+}
